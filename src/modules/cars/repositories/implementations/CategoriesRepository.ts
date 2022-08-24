@@ -1,14 +1,11 @@
 /* eslint-disable import/prefer-default-export */
 import Category from '../../model/Category';
 
-interface ICreateCategoryDTO {
-    name: string;
-    description: string;
-}
+import { ICategoriesRepository, ICreateCategoryDTO } from '../ICategoriesRepository'
 
 //singleton
 
-class CategoriesRepository {
+class CategoriesRepository implements ICategoriesRepository {
     private categories: Category[];
 
     private static INSTANCE: CategoriesRepository;
