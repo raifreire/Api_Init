@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import Category from '../../model/Category';
+import { Category } from '../../model/Category';
 
 import { ICategoriesRepository, ICreateCategoryDTO } from '../ICategoriesRepository'
 
@@ -12,6 +12,9 @@ class CategoriesRepository implements ICategoriesRepository {
 
     private constructor() {
         this.categories = [];
+    }
+    findByName(name: string): Category {
+        throw new Error('Method not implemented.');
     }
 
     public static getInstance(): CategoriesRepository {
@@ -38,7 +41,7 @@ class CategoriesRepository implements ICategoriesRepository {
         return this.categories;
     }
 
-    findByname(name: string): Category {
+    findByname(name: string): Category | undefined {
         const category = this.categories.find((category) => category.name === name);
         return category;
     }
