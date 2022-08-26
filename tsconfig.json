@@ -1,7 +1,8 @@
 {
     "extends": "@tsconfig/node12/tsconfig.json",
     "compilerOptions": {
-        "preserveConstEnums": true
+        "preserveConstEnums": true,
+        "resolveJsonModule": true,
     },
     "include": [
         "src/**/*"
@@ -9,5 +10,5 @@
     "exclude": [
         "node_modules",
         "**/*.spec.ts"
-    ]
+    ],
 }
